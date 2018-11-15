@@ -10,6 +10,7 @@ export class AppareilComponent implements OnInit {
   @Input() appareilName: string;
   @Input() appareilStatus: string = 'éteint';
   @Input() index: number;
+  @Input() ident: number;
 
   constructor(private appareilService: AppareilService) {
 
@@ -23,7 +24,7 @@ export class AppareilComponent implements OnInit {
       return 'red';
     }
     else {
-      return 'blue';
+      return 'green';
     }
   }
 

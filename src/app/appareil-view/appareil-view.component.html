@@ -1,14 +1,24 @@
-<h2>Mes appareils</h2>
-<p>Mise à jour : {{ lastUpdate | async | date: 'd/M/y -- HH:mm:ss' }}</p>
-<ul class="list-group">
-  <app-appareil  *ngFor="let appareil of appareils; let i = index"
-                 [appareilName]="appareil.name"
-                 [appareilStatus]="appareil.status"
-                 [index]="i"></app-appareil>
-</ul>
-<button class="btn btn-success"
-        (click)="onAllumer()">Tout allumer</button>
-<button class="btn btn-danger"
-        style="margin-left: 5px"
-        (click)="onEteindre()">Tout Eteindre</button>
+<div class="container">
+  <section class="row">
+    <button class="btn btn-danger col-lg-offset-11" *ngIf="auth" (click)="onSignOut()">Se déconnecter</button>
+    <h2>Mes appareils</h2>
+    <p>Mise à jour : {{ lastUpdate | async | date: 'd/M/y -- HH:mm:ss' }}</p>
+    <ul class="list-group">
+      <app-appareil *ngFor="let appareil of appareils; let i = index"
+                    [appareilName]="appareil.name"
+                    [appareilStatus]="appareil.status"
+                    [index]="i"
+                    [ident]="appareil.id"></app-appareil>
+    </ul>
+    <button class="btn btn-success"
+            (click)="onAllumer()">Tout allumer
+    </button>
+    <button class="btn btn-danger"
+            style="margin-left: 5px"
+            (click)="onEteindre()">Tout Eteindre
+    </button>
+    <div style="margin-top: 20px;"></div>
+  </section>
+</div>
+
 

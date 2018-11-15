@@ -3,4 +3,5 @@
   <h4>Status : <input class="form-control" [(ngModel)]="appareilStatus"></h4>
   <button class="btn btn-sm btn-success" *ngIf="appareilStatus == 'éteint'" (click)="onSwitch()">Allumer</button>
   <button class="btn btn-sm btn-danger" *ngIf="appareilStatus == 'allumé'" (click)="onSwitch()">Eteindre</button>
+  <button class="btn btn-sm btn-info" [routerLink]="[ident]" style="margin-left: 10px;">Détail</button>
 </li>
