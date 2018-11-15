@@ -7,7 +7,6 @@ import {AppareilService} from "./services/appareil.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isAuth = false;
   appareils: any[];
   lastUpdate = new Promise((resolve, reject) => {
     const date = new Date();
@@ -17,9 +16,7 @@ export class AppComponent {
   });
 
   constructor(private appareilService: AppareilService) {
-    setTimeout(() => {
-      this.isAuth = true;
-    }), 4000
+
   }
 
   ngOnInit() {
