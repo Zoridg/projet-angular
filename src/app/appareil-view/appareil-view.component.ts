@@ -28,11 +28,7 @@ export class AppareilViewComponent implements OnInit {
   }
 
   onAllumer() {
-    if (confirm('Etes-vous sûr de vouloir allumer tous les appareils ?')) {
-      this.appareilService.switchOnAll();
-    } else {
-      return null;
-    }
+    this.appareilService.switchOnAll();
   }
 
   onEteindre() {
