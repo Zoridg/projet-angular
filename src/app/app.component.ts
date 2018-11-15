@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AppareilService} from "./services/appareil.service";
 import {interval, Subscription} from "rxjs";
 
@@ -7,8 +7,8 @@ import {interval, Subscription} from "rxjs";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  appareils: any[];
+export class AppComponent implements OnInit, OnDestroy {
+
   lastUpdate = new Date();
   secondes: number;
   counterSubscription: Subscription;
@@ -18,8 +18,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.appareils = this.appareilService.appareils;
-    const counter = interval(1000);
+    const counter = interval(2000);
     this.counterSubscription = counter.subscribe(
       (value) => {
         this.secondes = value;
@@ -34,17 +33,5 @@ export class AppComponent implements OnInit {
 
   ngOnDestroy(){
     this.counterSubscription.unsubscribe();
-  }
-
-  onAllumer() {
-    if (confirm('Etes-vous sûr de vouloir éteindre tous les appareils ?')) {
-      this.appareilService.switchOnAll();
-    } else {
-      return null;
-    }
-  }
-
-  onEteindre() {
-    this.appareilService.switchOffAll();
   }
 }
