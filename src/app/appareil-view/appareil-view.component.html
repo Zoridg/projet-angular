@@ -1,6 +1,9 @@
 <div class="container">
   <section class="row">
-    <button class="btn btn-danger col-lg-offset-11" *ngIf="auth" (click)="onSignOut()">Se déconnecter</button>
+    <div class="col-lg-offset-11" style="width: 50%;">
+      <button class="btn btn-danger" *ngIf="auth" (click)="onSignOut()">Se déconnecter</button>
+      <span class="badge badge-primary badge-pill" style="margin-left: 5px; background-color: #5c0002">{{secondes}}</span>
+    </div>
     <h2>Mes appareils</h2>
     <p>Mise à jour : {{ lastUpdate | date: 'd/M/y -- HH:mm:ss' }}</p>
     <ul class="list-group">

@@ -6,6 +6,8 @@ export class UserServices {
   private users: User[];
   userSubject = new Subject<User[]>();
 
+  constructor(){}
+
   emitUsers(){
     this.userSubject.next(this.users.slice());
   }
