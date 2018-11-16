@@ -1,21 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <div class="navbar-collapse">
       <ul class="nav navbar-nav">
         <li routerLinkActive="active" class="nav-item active"><a class="nav-link" routerLink="auth">Authentification</a></li>
         <li routerLinkActive="active" class="nav-item active"><a class="nav-link" routerLink="appareils" >Appareils</a></li>
         <li routerLinkActive="active" class="nav-item active"><a class="nav-link" routerLink="edit" >Nouvel appareil</a></li>
+        <li routerLinkActive="active" class="nav-item active"><a class="nav-link" routerLink="users" >Utilisateurs</a></li>
       </ul>
-      <div class="card-block">
-        <div id="countdown" data-unit="seconds">
-          <div class="well">
-            <span id="sec" class="timer bg-success">{{ secondes }}</span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </nav>
+<span class="badge badge-primary badge-pill" style="margin-left: 7px; margin-top: -115px; background-color: #030052;">{{secondes}}</span>
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
