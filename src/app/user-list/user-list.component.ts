@@ -11,7 +11,7 @@ import {UserServices} from "../services/user.services";
 export class UserListComponent implements OnInit, OnDestroy {
 
   private users: User[] = [
-    new User('Nathan', 'Bergamini', 'nathan.bergamini@gmail.com', 'la Bière d\'Abbaye', ['programmer', 'jouer aux jeux vidéos', 'dormir'])
+    new User('Nathan', 'Bergamini', 'nathan.bergamini@gmail.com', 'la Bière d\'Abbaye')
   ];
   userSubscription: Subscription;
 
