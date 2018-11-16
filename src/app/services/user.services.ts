@@ -3,7 +3,7 @@ import {Subject} from "rxjs";
 
 export class UserServices {
 
-  private users: User[];
+  private users: User[] = [];
   userSubject = new Subject<User[]>();
 
   constructor(){}
