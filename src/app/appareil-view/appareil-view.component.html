@@ -2,7 +2,7 @@
   <section class="row">
     <button class="btn btn-danger col-lg-offset-11" *ngIf="auth" (click)="onSignOut()">Se déconnecter</button>
     <h2>Mes appareils</h2>
-    <p>Mise à jour : {{ lastUpdate | async | date: 'd/M/y -- HH:mm:ss' }}</p>
+    <p>Mise à jour : {{ lastUpdate | date: 'd/M/y -- HH:mm:ss' }}</p>
     <ul class="list-group">
       <app-appareil *ngFor="let appareil of appareils; let i = index"
                     [appareilName]="appareil.name"

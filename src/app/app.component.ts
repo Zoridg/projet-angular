@@ -18,7 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    const counter = interval(2000);
+    const counter = interval(1000);
     this.counterSubscription = counter.subscribe(
       (value) => {
         this.secondes = value;
